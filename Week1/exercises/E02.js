@@ -18,7 +18,7 @@ connection.connect((err)=>{
 
 
 const q1 = `select name from country where population > 8000000`;
-const q2 = `select name from country where name like "%land"`;
+const q2 = `select name from country where name like "%land%"`;
 const q3 = `select name from city where population between 500000 and 1000000`;
 const q4 = `select name from country where continent ="europe"`;
 const q5 = `select name from country order by surfacearea desc`;

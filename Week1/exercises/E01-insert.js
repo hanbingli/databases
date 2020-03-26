@@ -58,9 +58,9 @@ const meetings =[
 invitees.forEach(invitee=> {
     connection.query(
         `insert into invitee values(
-            ${invitee.invitee_no}, 
-            ${invitee.invitee_name}, 
-            ${invitee.invited_by})`
+            ${invitee.'invitee_no'}, 
+            ${invitee.'invitee_name'}, 
+            ${invitee.'invited_by'})`
     )
 
 });
@@ -68,9 +68,9 @@ invitees.forEach(invitee=> {
 rooms.forEach(room=> {
     connection.query(
         `insert into Room values(
-            ${room.room_no}, 
-            ${room.room_name}, 
-            ${room.floor_number})`
+            ${room.'room_no'}, 
+            ${room.'room_name'}, 
+            ${room.'floor_number'})`
     )
 });
  
@@ -78,11 +78,12 @@ rooms.forEach(room=> {
 meetings.forEach(meeting=> {
     connection.query(
         `insert into Room values(
-            ${meeting.meeting_no}, 
-            ${meeting.meeting_title}, 
-            ${meeting.starting_time}, 
-            ${meeting.meeting_no}
+            ${meeting.'meeting_no'}, 
+            ${meeting.'meeting_title'}, 
+            ${meeting.'starting_time'}, 
+            ${meeting.'meeting_no'}
     ）`)
 });
 
 
+connection.end();
